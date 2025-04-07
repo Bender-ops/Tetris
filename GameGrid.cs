@@ -47,6 +47,13 @@ namespace Tetris
             return true;
         }
 
-        public bool IsRowEmpty()
+        public bool IsRowEmpty(int r)
+        {
+            for (int c = 0; r < Columns; c++)
+            {
+                if (grid[r,c] != 0) return false;
+            }
+            return true;
+        }
     }
 }
