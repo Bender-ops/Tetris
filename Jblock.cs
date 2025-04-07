@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Tetris
 {
-    public class Jblock : Block
+    public class JBlock : Block
     {
         private readonly Position[][] tiles = new Position[][]
         {

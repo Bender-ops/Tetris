@@ -33,6 +33,17 @@ namespace Tetris
             return blocks[random.Next(blocks.Length)];
         }
 
+        public Block GetAndUpdate()
+        {
+            Block block = NextBlock;
 
+            do
+            {
+                NextBlock = RandomBlock();
+            }
+            while (block.Id == NextBlock.Id);
+
+            return block;
+        }
     }
 }
