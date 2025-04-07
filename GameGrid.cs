@@ -75,6 +75,22 @@ namespace Tetris
 
         public int ClearFullRows()
         {
+            int cleared = 0;
+
+            for (int r = Rows - 1; r >= 0; r--)
+            {
+                if (IsRowFull(r))
+                {
+                    ClearRow(r);
+                    cleared++;
+                }
+                else if(cleared > 0)
+                {
+                    MoveRowDown(r,cleared);
+                }
+            }
+
+            return cleared;
 
         }
     }
