@@ -160,5 +160,22 @@ namespace Tetris
             }
             return drop;
         }
+
+        public int BlockDropDistance()
+        {
+            int drop = GameGrid.Rows;
+
+            foreach(Position p in CurrentBlock.TilePositions())
+            {
+                drop = System.Math.Min(drop, TileDropDistance(p));
+            }
+            return drop;
+        }
+
+        public void DropBlock()
+        {
+            currentBlock.Move(BlockDropDistance(), 0);
+            PlaceBlock();
+        }
     }
 }
